@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Budgets - Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="wallets.html">Wallets</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="budgets.html" class="active">Budgets</a>
+    <a href="analytics.html">Analytics</a>
+  </nav>
+
+  <section id="budgets">
+    <h2>Budgets</h2>
+    <form id="budgetForm">
+      <input type="text" id="budgetCategory" placeholder="Category" required>
+      <input type="number" id="budgetAmount" placeholder="Budget Amount" required>
+      <button type="submit">Set Budget</button>
+    </form>
+    <ul id="budgetList"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

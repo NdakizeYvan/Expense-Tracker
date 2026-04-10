@@ -1,0 +1,195 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background: #4CAF50;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect: color change + underline */
+.navbar a:hover {
+  color: #FFD700; /* golden yellow */
+  transform: translateY(-2px);
+}
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 3px;
+  background: #FFD700;
+  transition: width 0.3s ease;
+}
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Active/selected page: permanent hover style */
+.navbar a.active {
+  color: #FFD700;          /* same as hover */
+  transform: translateY(-2px); /* lifted */
+}
+.navbar a.active::after {
+  width: 100%;             /* underline always visible */
+  background: #FFD700;     /* golden underline */
+  bottom: -4px;
+}
+
+/* Sections */
+section {
+  background: white;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 900px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+section h2 {
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
+
+/* Dashboard Cards */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 1.1rem;
+}
+.card span {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+/* Forms */
+form {
+  margin-bottom: 1.5rem;
+}
+form input, form select, form button {
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+form button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+form button:hover {
+  background: #45a049;
+}
+
+/* Transaction Forms */
+.transactionForm {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.hidden {
+  display: none;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+table th, table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+table th {
+  background: #f0f0f0;
+}
+table tr:hover {
+  background: #f9f9f9;
+}
+table button {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+table button:hover {
+  background: #c62828;
+}
+
+/* Budgets */
+#budgetList li {
+  margin-bottom: 1rem;
+}
+.progress-bar {
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 12px;
+  margin-top: 5px;
+}
+.progress-fill {
+  height: 12px;
+  transition: width 0.3s ease;
+}
+.progress-fill.green {
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+}
+.progress-fill.red {
+  background: linear-gradient(90deg, #E53935, #FF7043);
+}
+
+/* Analytics */
+#categoryChart {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  table th, table td {
+    font-size: 0.9rem;
+  }
+}

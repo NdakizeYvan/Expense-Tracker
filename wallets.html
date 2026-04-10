@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wallets - Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="wallets.html" class="active">Wallets</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="budgets.html">Budgets</a>
+    <a href="analytics.html">Analytics</a>
+  </nav>
+
+  <section id="wallets">
+    <h2>Wallets</h2>
+    <form id="walletForm">
+      <input type="text" id="walletName" placeholder="Wallet Name" required>
+      <input type="text" id="walletType" placeholder="Wallet Type" required>
+      <input type="number" id="walletBalance" placeholder="Initial Balance" required>
+      <button type="submit">Add Wallet</button>
+    </form>
+    <ul id="walletList"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

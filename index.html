@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="wallets.html">Wallets</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="budgets.html">Budgets</a>
+    <a href="analytics.html">Analytics</a>
+  </nav>
+
+  <section id="dashboard">
+    <h2>Dashboard</h2>
+    <div class="card">Total Balance: <span id="totalBalance">$0</span></div>
+    <div class="card">Monthly Income: <span id="monthlyIncome">$0</span></div>
+    <div class="card">Monthly Expenses: <span id="monthlyExpenses">$0</span></div>
+    <h3>Recent Transactions</h3>
+    <ul id="recentTransactions"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

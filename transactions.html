@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transactions</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="dashboard"> Dashboard</a>
+    <a href="wallets.html" class="wallets"> Wallets</a>
+    <a href="transactions.html" class="transactions active"> Transactions</a>
+    <a href="budgets.html" class="budgets"> Budgets</a>
+    <a href="analytics.html" class="analytics"> Analytics</a>
+  </nav>
+
+  <!-- Transactions Section -->
+  <section id="transactions">
+    <h2>Transactions</h2>
+
+    <!-- Transaction type selector -->
+    <label for="transactionType">Select Type</label>
+    <select id="transactionType">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+      <option value="transfer">Transfer</option>
+    </select>
+
+    <!-- Income Form -->
+    <form id="incomeForm" class="transactionForm hidden">
+      <p class="form-help">Enter the income amount and select the wallet to top up.</p>
+
+      <label for="incomeAmount">Income Amount</label>
+      <input type="number" id="incomeAmount" placeholder="Enter income amount" required>
+
+      <label for="incomeWallet">Wallet</label>
+      <select id="incomeWallet" required></select>
+
+      <button type="submit">Add Income</button>
+    </form>
+
+    <!-- Expense Form -->
+    <form id="expenseForm" class="transactionForm hidden">
+      <p class="form-help">Enter the expense amount, choose a category, and select the wallet to deduct from.</p>
+
+      <label for="expenseAmount">Expense Amount</label>
+      <input type="number" id="expenseAmount" placeholder="Enter expense amount" required>
+
+      <label for="expenseCategory">Category</label>
+      <select id="expenseCategorySelect">
+        <option value="">-- Select existing category --</option>
+      </select>
+      <input type="text" id="expenseCategoryInput" placeholder="Or type a new category">
+
+      <label for="expenseWallet">Wallet</label>
+      <select id="expenseWallet" required></select>
+
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Transfer Form -->
+    <form id="transferForm" class="transactionForm hidden">
+      <p class="form-help">Enter the transfer amount and select source and destination wallets.</p>
+
+      <label for="transferAmount">Transfer Amount</label>
+      <input type="number" id="transferAmount" placeholder="Enter transfer amount" required>
+
+      <label for="transferCategory">Category (optional)</label>
+      <select id="transferCategorySelect">
+        <option value="">-- Select existing category --</option>
+      </select>
+      <input type="text" id="transferCategoryInput" placeholder="Or type a new category">
+
+      <label for="fromWallet">From Wallet</label>
+      <select id="fromWallet" required></select>
+
+      <label for="toWallet">To Wallet</label>
+      <select id="toWallet" required></select>
+
+      <button type="submit">Add Transfer</button>
+    </form>
+
+    <!-- Transactions Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Wallet(s)</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="transactionList"></tbody>
+    </table>
+  </section>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
